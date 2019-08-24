@@ -8,7 +8,7 @@ pipeline {
 				script {
 					
 				def userInput = input(message:'Do you want to proceed for production deployment?')
-				
+				echo "$userInput"
 				
 				if (userInput == true) {
         // do something
