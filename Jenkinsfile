@@ -13,7 +13,7 @@ pipeline {
 				if (userInput == proceed) {
         // do something
         echo "this was successful"
-    } if (userInput == abort) {
+    } else {
         // do something else
         echo "this was not successful"
         currentBuild.result = 'FAILURE'
