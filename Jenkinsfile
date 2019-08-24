@@ -4,19 +4,20 @@ pipeline {
 	stages {
 		stage ('Deploy to production') { 
 			steps {
-				when {
- 			   // case insensitive regular expression for truthy values
-    			expression { return token ==~ /(?i)(Y|YES|T|TRUE|ON|RUN)/ }
-				}
-			steps {
-    /* step */
-				echo 'yes'
-				}
-				//script {
+
+				script {
 					
-				//def userInput = input(message:'Do you want to proceed for production deployment?')
-				//echo userInput  
-			//}
+				def userInput = input(message:'Do you want to proceed for production deployment?')
+				
+				}
+				if (userInput == true) {
+        // do something
+        echo "this was successful"
+    } else {
+        // do something else
+        echo "this was not successful"
+        currentBuild.result = 'FAILURE'
+    } 
 			}
 		}
 		}
