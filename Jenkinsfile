@@ -4,8 +4,6 @@ pipeline {
 		stage ('Deploy to production') { 
 			steps {
 				def userInput = input(message:'Do you want to proceed for production deployment?')
-			}
-			steps {
 				echo userInput  
 			}
 		}
